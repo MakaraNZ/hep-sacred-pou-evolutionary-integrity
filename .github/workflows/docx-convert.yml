@@ -1,0 +1,62 @@
+name: Convert DOCX to Markdown + PDF
+
+on:
+  push:
+    paths:
+      - 'source/*.docx'
+      - '.github/workflows/docx-convert.yml'
+  workflow_dispatch: {}
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pandoc + libreoffice
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice
+
+      - name: Ensure docs folder
+        run: |
+          mkdir -p docs
+
+      - name: Convert DOCX → Markdown
+        run: |
+          for f in source/*.docx; do
+            base=$(basename "$f" .docx)
+            pandoc "$f" -o "docs/${base}.md" --standalone --wrap=none --metadata=title:"The Sacred Pou of Evolutionary Integrity v1.0"
+          done
+
+      - name: Convert DOCX → PDF
+        run: |
+          for f in source/*.docx; do
+            base=$(basename "$f" .docx)
+            libreoffice --headless --convert-to pdf "$f" --outdir docs
+            mv "docs/${base}.pdf" "docs/${base}.pdf" || true
+          done
+
+      - name: Add front matter to Markdown (for Jekyll/Pages)
+        run: |
+          for f in docs/*.md; do
+            tmp=$(mktemp)
+            echo '---' > "$tmp"
+            echo 'title: "The Sacred Pou of Evolutionary Integrity v1.0"' >> "$tmp"
+            echo 'layout: default' >> "$tmp"
+            echo 'nav_order: 1' >> "$tmp"
+            echo '---' >> "$tmp"
+            cat "$f" >> "$tmp"
+            mv "$tmp" "$f"
+          done
+
+      - name: Commit converted files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/*.md docs/*.pdf
+          git commit -m "chore: auto-convert DOCX → MD/PDF [skip ci]" || echo "No changes"
+          git push
