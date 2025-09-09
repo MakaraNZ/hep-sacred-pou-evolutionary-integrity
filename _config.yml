@@ -1,0 +1,14 @@
+title: HEP — Sacred Pou of Evolutionary Integrity
+description: Canonical source for Pou v1.0, Operational Toolkit, and SIS prompt.
+theme: minima
+plugins:
+  - jekyll-sitemap
+markdown: kramdown
+kramdown:
+  input: GFM
+defaults:
+  - scope: { path: "docs" }
+    values: { layout: page }
+exclude:
+  - README.md
+  - LICENSE
