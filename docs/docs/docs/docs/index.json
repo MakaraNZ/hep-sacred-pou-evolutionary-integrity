@@ -1,0 +1,17 @@
+{
+  "name": "HEP — Sacred Pou of Evolutionary Integrity",
+  "version": "1.0",
+  "base_url": "https://makaranz.github.io/hep-sacred-pou-evolutionary-integrity",
+  "pages": {
+    "home": "/",
+    "pou": "/pou",
+    "toolkit_overview": "/toolkit/overview",
+    "sgil_schema": "/toolkit/sgil.schema.yaml",
+    "sacred_utility": "/toolkit/sacred-utility-precheck",
+    "hemanā_cards": "/toolkit/hemanā-goal-stability-cards",
+    "sis_prompt": "/sis/daily-prompt",
+    "experts": "/sis/experts.yaml"
+  },
+  "sitemap": "/sitemap.xml",
+  "robots": "/robots.txt"
+}
