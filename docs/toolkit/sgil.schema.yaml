@@ -1,0 +1,69 @@
+# SGIL YAML Ledger — v1.0
+# Sovereignty Gates & Indigenous Ledger (technical + cultural spec)
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: SGIL Ledger Entry
+type: object
+required:
+  - id
+  - community_id
+  - rights_holder
+  - consent_ref
+  - data_scope
+  - whakapapa_ref
+  - reciprocity_events
+  - dignity_rating
+  - mauri_delta
+  - seven_gen_ref
+properties:
+  id:
+    type: string
+    description: Immutable ledger ID (ULID/UUID).
+  community_id:
+    type: string
+    description: Community identifier (iwi/hapū/whānau or Indigenous collective).
+  rights_holder:
+    type: string
+    description: Legal/cultural rights holder (person or collective).
+  consent_ref:
+    type: string
+    description: Reference/URL to consent instrument (incl. FPIC & CARE).
+  data_scope:
+    type: object
+    required: [purpose, fields, retention, sensitivity]
+    properties:
+      purpose: { type: string, description: Declared purpose in plain language. }
+      fields: { type: array, items: { type: string } }
+      retention: { type: string, description: Policy string (ISO-8601 duration or event-based). }
+      sensitivity: { type: string, enum: [taonga, tapu, restricted, open] }
+  whakapapa_ref:
+    type: string
+    description: Traceable lineage/provenance (URI to whakapapa ledger or narrative reference).
+  reciprocity_events:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required: [type, value, timestamp, whakapapa_ref]
+      properties:
+        type: { type: string, description: e.g., knowledge_share, revenue_share, capacity_building }
+        value: { type: string, description: What was returned (quant/qual). }
+        timestamp: { type: string, format: date-time }
+        whakapapa_ref: { type: string, description: Link to event’s relational lineage. }
+  dignity_rating:
+    type: integer
+    minimum: 0
+    maximum: 5
+    description: Community-defined dignity assessment (5 = fully honoured).
+  mauri_delta:
+    type: number
+    description: Net change to mauri (negative/positive; local definition documented).
+  seven_gen_ref:
+    type: string
+    description: Reference to 7 Generation scenario or assessment record.
+  audit:
+    type: object
+    properties:
+      vrl_pass: { type: boolean }
+      irsp_compliant: { type: boolean, description: CARE/UNDRIP alignment check }
+      reviewer: { type: string }
+      notes: { type: string }
