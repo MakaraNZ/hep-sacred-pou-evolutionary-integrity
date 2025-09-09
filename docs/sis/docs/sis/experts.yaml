@@ -1,0 +1,116 @@
+# Expert Lattice Roster v1.0 (expand toward ~45)
+# fields: id, name, domains, lenses, region, notes, sources[]
+- id: raworth_kate
+  name: Kate Raworth
+  domains: [governance, economy, regeneration]
+  lenses: [Doughnut, rights-based]
+  region: EU
+  notes: Regenerative economy & social foundation
+  sources:
+    - https://doughnuteconomics.org/
+
+- id: mbembe_achille
+  name: Achille Mbembe
+  domains: [decolonial, governance]
+  lenses: [disenclosure, repair]
+  region: Africa
+  sources:
+    - https://wiser.wits.ac.za/
+
+- id: hinton_geoffrey
+  name: Geoffrey Hinton
+  domains: [ai-safety, agentic-systems]
+  lenses: [goal-stability, risk]
+  region: CA
+  sources:
+    - https://www.cs.toronto.edu/~hinton/
+
+- id: kimmerer_robin
+  name: Robin Wall Kimmerer
+  domains: [multispecies, reciprocity]
+  lenses: [Potawatomi, regeneration]
+  region: NA
+  sources:
+    - https://www.robinwallkimmerer.com/
+
+- id: matamua_rangi
+  name: Rangi Mātāmua
+  domains: [mātauranga, timing, governance]
+  lenses: [maramataka, tikanga]
+  region: Aotearoa
+  sources:
+    - https://www.teara.govt.nz/en/biographies/6m5/matamua-rangi
+
+- id: bateson_nora
+  name: Nora Bateson
+  domains: [complexity, evaluation]
+  lenses: [Warm Data, transcontextual]
+  region: EU/US
+  sources:
+    - https://norabateson.com/
+
+- id: akomolafe_bayo
+  name: Bayo Akomolafe
+  domains: [postactivism, decolonial]
+  lenses: [otherwise, opacity]
+  region: Global South
+  sources:
+    - https://bayoakomolafe.net/
+
+- id: omoregie_uyiosa
+  name: Uyiosa Omoregie
+  domains: [ethics, indigenous]
+  lenses: [Ifá, binaries]
+  region: Africa/EU
+  sources:
+    - https://blogs.lse.ac.uk/impactofsocialsciences/
+
+- id: salmond_anne
+  name: Anne Salmond
+  domains: [taonga, multispecies]
+  lenses: [iwi-governance]
+  region: Aotearoa
+  sources:
+    - https://www.auckland.ac.nz/
+
+- id: li_feifei
+  name: Fei-Fei Li
+  domains: [ai, ethics]
+  lenses: [relational-intelligence]
+  region: US
+  sources:
+    - https://hai.stanford.edu/
+
+- id: benyus_janine
+  name: Janine Benyus
+  domains: [biomimicry, architecture]
+  lenses: [decentralized, mycelial]
+  region: US
+  sources:
+    - https://biomimicry.org/
+
+- id: furze_leon
+  name: Leon Furze
+  domains: [education, ai-eval]
+  lenses: [truth, verification]
+  region: AU
+  sources:
+    - https://leonfurze.com/
+
+- id: taiuru_karaitiana
+  name: Karaitiana Taiuru
+  domains: [data-sovereignty, tikanga]
+  lenses: [whakapapa-rights]
+  region: Aotearoa
+  sources:
+    - https://taiuru.maori.nz/
+
+- id: esp_team
+  name: Earth Species Project
+  domains: [multispecies, bioacoustics]
+  lenses: [non-symbolic]
+  region: Global
+  sources:
+    - https://www.earthspecies.org/
+
+# …continue adding until you reach your ~45 target
