@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://makaranz.github.io/hep-sacred-pou-evolutionary-integrity/sitemap.xml
